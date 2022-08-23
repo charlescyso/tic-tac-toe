@@ -11,7 +11,7 @@ const gameBoard = (() => {
 
 // display module
 const displayController = (() => {
-    const cells = document.querySelectorAll('cell')
+    const cells = document.querySelectorAll('cell');
 
 
 
