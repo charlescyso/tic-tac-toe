@@ -1,9 +1,9 @@
 // board module
 const gameBoard = (() => {
     let board = [
-        'X', 'O', 'X',
-        'O', 'X', 'O',
-        'X', 'O', 'X'
+        '', '', '',
+        '', '', '',
+        '', '', ''
     ];
 
     return {board};
@@ -11,22 +11,30 @@ const gameBoard = (() => {
 
 // display module
 const displayController = (() => {
-    const cells = document.querySelectorAll('cell');
+    const cells = document.querySelectorAll('.cell');
 
-
-
+    // render gameBoard.board array onto DOM
     const render = () => {
-        cells.forEach(cell => cell.textContent = 'lol');
+        cells.forEach((cell, index) => cell.textContent = gameBoard.board[index]);
     };
 
-    return {render};
 
+    // events
+    cells.forEach(cell => cell.addEventListener('click', (event) => {
+        gameController.updateBoard(event.target.dataset.index);
+        render();
+    }));
 })();
-
-displayController.render();
 
 // game module
 const gameController = (() => {
+
+    // updates gameBoard.board array item with player's mark
+    const updateBoard = (index) => {
+        gameBoard.board[index] = player1.getMark();
+    };
+
+
 
     const checkWin = () => {
         const winConditions = [
@@ -39,9 +47,9 @@ const gameController = (() => {
             [0, 4, 8], // diagonals
             [2, 4, 6],
         ];
-
-        return // code that returns true if condition is met
     }
+
+    return {updateBoard};
 })();
 
 
