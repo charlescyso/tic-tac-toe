@@ -9,3 +9,17 @@
 *::after {
     box-sizing: border-box;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+}
+
+.cell {
+    display: flex;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
