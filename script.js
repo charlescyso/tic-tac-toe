@@ -27,18 +27,28 @@ const displayController = (() => {
 })();
 
 // player factory
-const Player = (mark) => {
+const Player = (mark, playerIndex) => {
+    let name = `Player ${playerIndex}`
+    
     const getMark = () => {
         return mark;
     }
 
-    return {getMark};
+    const setName = (newName) => {
+        name = newName;
+    }
+
+    const getName = () => {
+        return name;
+    }
+
+    return {getMark, setName, getName};
 };
 
 // game module
 const gameController = (() => {
-    const player1 = Player('X');
-    const player2 = Player('O');
+    const player1 = Player('X', '1');
+    const player2 = Player('O', '2');
     let round = 1;
     let isOver = false;
     let tie = false;
