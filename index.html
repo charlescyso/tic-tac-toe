@@ -7,11 +7,15 @@
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p id="message">placeholder</p>
+    <div class="fw-bold fs-600 text-center margin-top">Tic-Tac-Toe</div>
+    <div class="text-center margin-top" id="message">placeholder</div>
     
-    <div class="grid">
+    <div class="grid div-center margin-top">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
         <div class="cell" data-index="2"></div>
@@ -24,18 +28,19 @@
     </div>
     
     <form id="name-form">
-        <div>
+        <div class="form-group margin-top">
             <label for="player-one-name">Player 1's name:</label>
             <input type="text" id="player-one-name">
         </div>
-        <div>
-            <label for="player-two-name">Player 2's name</label>
+        <div class="form-group margin-top">
+            <label for="player-two-name">Player 2's name:</label>
             <input type="text" id="player-two-name">
         </div>
-        <input type="submit">
     </form>
 
-    <button id="reset-btn">Reset</button>
+    <input class="div-center margin-top" type="submit" form="name-form">
+
+    <button class="div-center margin-top" id="reset-btn">Reset</button>
 
     <script src="script.js"></script>
 </body>
